@@ -1,0 +1,151 @@
+@charset "utf-8";
+$designWidth: 375;
+@function px( $px) {
+  @return $px*187.5/$designWidth/20+rem;
+}
+
+body,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form {
+  margin: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  font-size: 14px;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+a {
+  border: none;
+  text-decoration: none;
+}
+
+a,
+button,
+input,
+label {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  border: none;
+}
+
+body {
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header {
+  height: px(44);
+  background: #000;
+  font: px(16) / px(44) "Microsoft YaHei";
+  color: #fff;
+  text-align: center;
+}
+
+.g-carousel {
+  height: px(220);
+  .dot-list {
+    span {
+      background: transparent;
+      box-shadow: 0 0 0 px(2) #fff;
+      margin: 0 px(10) !important;
+      &.swiper-pagination-bullet-active {
+        background: #000;
+        box-shadow: 0 0 0 px(2) #fff, 0 0 0 px(3) #000;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.g-info {
+  padding: 0 px(18);
+  h3 {
+    font: px(18)/px(38) "Microsoft YaHei";
+  }
+  p {
+    font-size: px(12);
+  }
+}
+
+nav{
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  padding: px(20) 0;
+  margin-top: px(10); 
+  a{
+    display: flex;
+    flex: 1;
+    border:1px solid #c4ccf7;
+    margin: 0 px(6);
+    color: #3a57ef;
+    justify-content: center;
+    font:px(16)/px(60) "Microsoft YaHei";
+  }
+}
+footer{
+  text-align: center;
+  .qrCode{
+    display:block;
+      width:px(180);
+      height: px(180);
+      margin: 0 auto;
+  }
+    span{
+      font-size:px(14);
+    }
+}
