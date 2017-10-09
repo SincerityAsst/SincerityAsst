@@ -244,3 +244,68 @@ footer {
   .g-scusess p {
     color: #000;
     font-size: 0.375rem; }
+
+.g-qrdq {
+  padding: 0.3rem;
+  color: #bfbfbf;
+  font-size: 0.35rem; }
+  .g-qrdq tr {
+    height: 1.05rem; }
+  .g-qrdq td {
+    position: relative; }
+  .g-qrdq input {
+    border: none;
+    width: 100%;
+    padding-bottom: 0.1rem;
+    text-indent: 0.25rem;
+    border-bottom: 0.025rem solid #bfbfbf; }
+    .g-qrdq input::-webkit-input-placeholder {
+      color: #bfbfbf; }
+    .g-qrdq input::placeholder {
+      color: #bfbfbf; }
+  .g-qrdq .sprite {
+    display: block;
+    width: 0.025rem;
+    height: 0.3rem;
+    background-color: #717279;
+    position: absolute;
+    right: 0;
+    top: 0.35rem; }
+  .g-qrdq .qu {
+    width: 1.2rem;
+    height: 0.9rem;
+    color: #6f5af0;
+    border-radius: 0.15rem;
+    background-color: #e7e9f2;
+    text-align: center;
+    line-height: 0.9rem;
+    font-size: 0.6rem; }
+  .g-qrdq .g-tips label {
+    width: 1.925rem;
+    height: 0.75rem; }
+  .g-qrdq .g-tips input[type="radio"]:checked + label {
+    background-color: #6288f3;
+    color: #fff; }
+
+.g-wechat-pay {
+  border-top: 0.05rem solid #d0d0d0;
+  padding: 0.5rem 0.625rem; }
+  .g-wechat-pay input {
+    display: none; }
+  .g-wechat-pay label {
+    color: #38b035;
+    font-size: 0.5rem;
+    float: right; }
+  .g-wechat-pay input[type="checkbox"]:checked + label {
+    color: #b5b5b5; }
+  .g-wechat-pay .icon {
+    color: #4c4949;
+    font-size: 0.35rem;
+    float: left; }
+    .g-wechat-pay .icon i {
+      background-color: #38b035;
+      color: #fff;
+      font-size: 0.5rem;
+      padding: 0.125rem;
+      border-radius: 0.075rem;
+      margin-right: 0.25rem; }
