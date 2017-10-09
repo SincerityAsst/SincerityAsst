@@ -261,11 +261,15 @@ footer {
   width: 100%;
   height: px(46);
   margin: 0;
-  input {
+  input,a {
+    display: block;
+    height: 100%;
+    text-align: center;
     background: #6288f3;
     text-indent: 0;
     color: #fff;
     font-size: px(20);
+    line-height: px(46);
     &.ban {
       background: #ced2d3;
     }
