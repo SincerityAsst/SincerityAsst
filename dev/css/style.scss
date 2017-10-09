@@ -30,7 +30,9 @@ ul,
 li {
   list-style: none;
 }
-
+svg{
+  fill: currentColor;
+}
 button,
 input,
 select,
@@ -382,5 +384,110 @@ footer {
       border-radius:px(3);
       margin-right:px(10);
     }
+  }
+}
+
+.g-search{
+  padding:px(45) px(30) px(100);
+  border-bottom:px(1) solid #e1e1e1;
+  margin-bottom:px(50);
+  &.g-search2{
+    padding-bottom:px(20);
+    margin-bottom:0;
+  }
+  .tit{
+    position: relative;
+    color: #4971f5;
+    font-size:px(14);
+    text-align: center;
+    &:before,&:after{
+      content: '';
+      position: absolute;
+      left:0;
+      top:px(10);
+      width:36%;
+      height:px(1);
+      background-color: #d2cdcd;
+    }
+    &:after{
+      right: 0;
+      left: auto;
+    }
+  }
+  .input{
+    border:px(1) solid #d2cdcd;
+    color: #d2cdcd;
+    position: relative;
+    height:px(40);
+    margin:px(20) auto px(30);
+    overflow: hidden;
+    svg{
+      width:px(24);
+      height:px(24);
+      position: absolute;
+      margin:px(10);
+      right:0;
+    }
+    input {
+      border: none;
+      width:100%;
+      position: absolute;
+      top:0;
+      height:px(40);
+      text-indent:px(10);
+      font-size:px(14);
+      &::-webkit-input-placeholder {
+        color: #d2cdcd;
+      }
+      &::placeholder {
+        color: #d2cdcd;
+      }
+    }
+  }
+  .submit{
+    background-color: #3090f4;
+    height:px(43);
+    color: #fff;
+    font-size:px(20);
+    text-align: center;
+    line-height:px(43);
+    border:none;
+    width:100%;
+  }
+}
+.g-list{
+  .tit{
+    color: #756e6e;
+    font-size:px(15);
+    line-height:px(40);
+    padding-left:px(26);
+    border-bottom:px(1) solid #e1e1e1;
+  }
+  li{
+    margin-left:px(46);
+    border-bottom:px(1) solid #e1e1e1;
+    color: #9c9393;
+    font-size:px(12);
+    padding:px(12) 0;
+    svg{
+      float: left;
+      width:px(26);
+      height:px(26);
+    }
+    .detail{
+      overflow: hidden;
+      margin-left:px(40);
+      line-height:1.8;
+    }
+  }
+  .no-data{
+    text-align: center;
+    padding-top:px(110);
+    background: url(../images/no-res.png) no-repeat;
+    background-size:contain;
+    width: px(124);
+    margin:px(30) auto 0;
+    font-size:px(15);
+    color: #9c9393;
   }
 }
