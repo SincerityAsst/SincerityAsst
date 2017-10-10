@@ -164,7 +164,6 @@ footer {
     font-size: px(14);
   }
 }
-
 .form-group {
   position: relative;
   width: px(300);
@@ -176,6 +175,8 @@ footer {
     height: 100%;
     border: 1px solid #d2cdcd;
     text-indent: px(38);
+    box-sizing: border-box;
+    padding-right:px(42);
     &.nti {
       text-indent: px(6);
     }
@@ -229,12 +230,7 @@ footer {
     border-color: #2872d8
   }
 }
-
 .g-intro {
-  position: fixed;
-  bottom: px(100);
-  left: 50%;
-  transform: translate(-50%, 0);
   p {
     color: #373435;
     font-size: px(12);
@@ -489,5 +485,51 @@ footer {
     margin:px(30) auto 0;
     font-size:px(15);
     color: #9c9393;
+  }
+}
+.g-address{
+  padding:0 10%;
+  input{
+    width:100%;
+    border:none;
+    border-bottom:px(1) solid #bfbfbf;
+    font-size:px(15);
+    padding:px(10) px(6);
+    margin-top:px(10);
+    &::-webkit-input-placeholder {
+      color: #bfbfbf;
+    }
+    &::placeholder {
+      color: #bfbfbf;
+    }
+    &[type='checkbox']{
+      display: none;
+      &:checked + label{
+        i{
+          color: #38b035;
+        }
+      }
+    }
+  }
+  div{
+    position: relative;
+  }
+  label{
+    color: #bfbfbf;
+    font-size:px(15);
+  }
+  .lab-address{
+    position: absolute;
+    right:0;
+    top:px(26);
+    i{
+      font-size:px(20);
+    }
+  }
+  .lab-default{
+    i{
+      padding-right:px(10);
+      font-size:px(16);
+    }
   }
 }

@@ -27,7 +27,7 @@
                 }
                 var scale = 1,
                     content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale +
-                    ", maximum-scale=" + scale + ", user-scalable=no";
+                        ", maximum-scale=" + scale + ", user-scalable=no";
                 if (viewportEl) {
                     viewportEl.setAttribute("content", content)
                 } else {
@@ -63,12 +63,188 @@
 </head>
 
 <body>
-    <header>
-        <span>添加地址</span>
-    </header>
-    <div class="form-group g-submit">
-        <a href="javascript:history.back(-1)">返回</a>
-    </div>
+<header>
+    <span>添加地址</span>
+</header>
+<section class="g-address">
+    <form action="">
+        <input id="name" type="text" placeholder="姓名" required>
+        <input id="phone" type="text" placeholder="手机号或座机号码" required>
+        <div>
+            <input id="address" type="text" placeholder="省市区" required readonly>
+            <!--设置上传字段-->
+            <input type="hidden" id="province">
+            <input type="hidden" id="city">
+            <input type="hidden" id="area">
+            <label class="lab-address" for="address">请选择 <i class="fa fa-angle-right"></i></label>
+        </div>
+        <input id="detail" type="text" placeholder="请输入您的详细地址" required>
+        <div>
+            <input id="default" type="checkbox">
+            <label class="lab-default" for="default"><i class="fa fa-check-circle-o"></i>设为默认寄件地址</label>
+        </div>
+        <input type="submit" id="f_submit" style="display: none;">
+    </form>
+</section>
+<section class="form-group g-submit">
+    <input id="submit" type="submit" value="立即支付">
+</section>
+<section id="msg"></section>
+<script src="../common/js/city.js"></script>
+<script src='../common/js/jquery-1.10.1.min.js'></script>
+<script src="../common/js/picker.min.js"></script>
+<script>
+    function showMsg(str) {
+        $('#msg').text(str).fadeToggle().delay(1000).fadeToggle();
+        return false;
+    }
+    /*城市选择*/
+    (function () {
+        var nameEl = document.getElementById('address');
+
+        var first = [];
+        /* 省，直辖市 */
+        var second = [];
+        /* 市 */
+        var third = [];
+        /* 镇 */
+
+        var selectedIndex = [0, 0, 0];
+        /* 默认选中的地区 */
+
+        var checked = [0, 0, 0];
+        /* 已选选项 */
+
+        function creatList(obj, list) {
+            obj.forEach(function (item, index, arr) {
+                var temp = new Object();
+                temp.text = item.name;
+                temp.value = index;
+                list.push(temp);
+            })
+        }
+
+        creatList(city, first);
+
+        if (city[selectedIndex[0]].hasOwnProperty('sub')) {
+            creatList(city[selectedIndex[0]].sub, second);
+        } else {
+            second = [{text: '', value: 0}];
+        }
+
+        if (city[selectedIndex[0]].sub[selectedIndex[1]].hasOwnProperty('sub')) {
+            creatList(city[selectedIndex[0]].sub[selectedIndex[1]].sub, third);
+        } else {
+            third = [{text: '', value: 0}];
+        }
+
+        var picker = new Picker({
+            data: [first, second, third],
+            selectedIndex: selectedIndex,
+            title: '地址选择'
+        });
+
+        picker.on('picker.select', function (selectedVal, selectedIndex) {
+            var text1 = first[selectedIndex[0]].text;
+            var text2 = second[selectedIndex[1]].text;
+            var text3 = third[selectedIndex[2]] ? third[selectedIndex[2]].text : '';
+            if (text3.length) {
+                nameEl.value = text1 + '省 ' + text2 + '市 ' + text3;
+            } else {
+                nameEl.value = text1 + '市 ' + text2;
+            }
+            /*设置上传字段*/
+            $('#province').val(text1);
+            $('#city').val(text2);
+            $('#area').val(text3);
+        });
+
+        picker.on('picker.change', function (index, selectedIndex) {
+            if (index === 0) {
+                firstChange();
+            } else if (index === 1) {
+                secondChange();
+            }
+
+            function firstChange() {
+                second = [];
+                third = [];
+                checked[0] = selectedIndex;
+                var firstCity = city[selectedIndex];
+                if (firstCity.hasOwnProperty('sub')) {
+                    creatList(firstCity.sub, second);
+
+                    var secondCity = city[selectedIndex].sub[0];
+                    if (secondCity.hasOwnProperty('sub')) {
+                        creatList(secondCity.sub, third);
+                    } else {
+                        third = [{text: '', value: 0}];
+                        checked[2] = 0;
+                    }
+                } else {
+                    second = [{text: '', value: 0}];
+                    third = [{text: '', value: 0}];
+                    checked[1] = 0;
+                    checked[2] = 0;
+                }
+
+                picker.refillColumn(1, second);
+                picker.refillColumn(2, third);
+                picker.scrollColumn(1, 0);
+                picker.scrollColumn(2, 0);
+            }
+
+            function secondChange() {
+                third = [];
+                checked[1] = selectedIndex;
+                var first_index = checked[0];
+                if (city[first_index].sub[selectedIndex].hasOwnProperty('sub')) {
+                    var secondCity = city[first_index].sub[selectedIndex];
+                    creatList(secondCity.sub, third);
+                    picker.refillColumn(2, third);
+                    picker.scrollColumn(2, 0)
+                } else {
+                    third = [{text: '', value: 0}];
+                    checked[2] = 0;
+                    picker.refillColumn(2, third);
+                    picker.scrollColumn(2, 0);
+                }
+            }
+
+        });
+
+//        picker.on('picker.valuechange', function (selected) {
+//            var curCity = city[selected[0]], subCity = curCity['sub'][selected[1]],
+//                ssubCity = subCity['sub'] ? subCity['sub'][selected[2]] : null;
+//            if (ssubCity) {
+//                nameEl.value = curCity['name'] + '省 ' + subCity['name'] + '市 ' + ssubCity['name'];
+//            } else {
+//                nameEl.value = curCity['name'] + '市 ' + subCity['name'];
+//            }
+//        });
+
+        nameEl.addEventListener('click', function () {
+            picker.show();
+            return false;
+        });
+    })();
+    /*保存*/
+    $('#submit').click(function () {
+        if (!$('#name').val().length || !$('#phone').val().length || !$('#address').val().length || !$('#detail').val().length) {
+            $('#f_submit').click();
+        } else {
+            var key = location.search.split('=')[1];
+            localStorage.setItem(key, $('#address').val() + ' ' + $('#detail').val());
+            window.history.back();
+        }
+    });
+    $('#phone').blur(function () {
+        if($(/(^(\d{3,4}-)?\d{7,8})$|(13[0-9]{9})/.test($(this).val()))){
+            $(this).val('');
+            showMsg('请填写正确的电话号码！');
+        }
+    })
+</script>
 </body>
 
 </html>

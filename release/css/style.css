@@ -142,7 +142,9 @@ footer {
     width: 100%;
     height: 100%;
     border: 1px solid #d2cdcd;
-    text-indent: 0.95rem; }
+    text-indent: 0.95rem;
+    box-sizing: border-box;
+    padding-right: 1.05rem; }
     .form-group input.nti {
       text-indent: 0.15rem; }
   .form-group label {
@@ -185,27 +187,25 @@ footer {
   .g-weight input[type="radio"]:checked + label {
     border-color: #2872d8; }
 
-.g-intro {
-  position: fixed;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translate(-50%, 0); }
-  .g-intro p {
-    color: #373435;
-    font-size: 0.3rem;
-    width: 7.5rem;
-    margin: 0 auto; }
-  .g-intro label,
-  .g-intro input {
-    position: relative; }
-  .g-intro label {
-    color: #373435;
-    font-size: 0.3rem;
-    left: 22%; }
-  .g-intro input {
-    width: 0.4rem;
-    height: 0.4rem;
-    vertical-align: middle; }
+.g-intro p {
+  color: #373435;
+  font-size: 0.3rem;
+  width: 7.5rem;
+  margin: 0 auto; }
+
+.g-intro label,
+.g-intro input {
+  position: relative; }
+
+.g-intro label {
+  color: #373435;
+  font-size: 0.3rem;
+  left: 22%; }
+
+.g-intro input {
+  width: 0.4rem;
+  height: 0.4rem;
+  vertical-align: middle; }
 
 .g-submit {
   position: fixed;
@@ -402,3 +402,35 @@ footer {
   margin: 0.75rem auto 0;
   font-size: 0.375rem;
   color: #9c9393; }
+
+.g-address {
+  padding: 0 10%; }
+  .g-address input {
+    width: 100%;
+    border: none;
+    border-bottom: 0.025rem solid #bfbfbf;
+    font-size: 0.375rem;
+    padding: 0.25rem 0.15rem;
+    margin-top: 0.25rem; }
+    .g-address input::-webkit-input-placeholder {
+      color: #bfbfbf; }
+    .g-address input::placeholder {
+      color: #bfbfbf; }
+    .g-address input[type='checkbox'] {
+      display: none; }
+      .g-address input[type='checkbox']:checked + label i {
+        color: #38b035; }
+  .g-address div {
+    position: relative; }
+  .g-address label {
+    color: #bfbfbf;
+    font-size: 0.375rem; }
+  .g-address .lab-address {
+    position: absolute;
+    right: 0;
+    top: 0.65rem; }
+    .g-address .lab-address i {
+      font-size: 0.5rem; }
+  .g-address .lab-default i {
+    padding-right: 0.25rem;
+    font-size: 0.4rem; }
