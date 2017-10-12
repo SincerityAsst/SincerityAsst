@@ -252,7 +252,7 @@ footer {
     height: 100%;
     border: 1px solid #d2cdcd;
     text-indent: px(38);
-    box-sizing: border-box;
+    box-sizing: content-box;
     padding-right: px(42);
     &.nti {
       text-indent: px(6);
@@ -431,11 +431,25 @@ footer {
       color: #fff;
     }
   }
-}
 
+}
+.g-pays{
+  margin-top:px(20);
+  .tit{
+    color: #006bd2;
+    font-size:px(14);
+  }
+  input[type="radio"]:checked + label {
+    background-color: #6288f3;
+    color: #fff;
+  }
+}
 .g-wechat-pay {
   border-top: px(2) solid #d0d0d0;
   padding: px(20) px(25);
+  &.g-wechat-pay2{
+    padding:px(20) px(45);
+  }
   input {
     display: none;
   }
@@ -611,6 +625,31 @@ footer {
     i {
       padding-right: px(10);
       font-size: px(16);
+    }
+  }
+}
+
+.g-eCard{
+  padding:px(20) px(45);
+  .ipts{
+    position: relative;
+    padding-left:px(50);
+    color: #3090f4;
+    box-sizing: border-box;
+    width:100%;
+    input{
+      display: block;
+      width:100%;
+      border:none;
+      border-bottom:px(1) solid #525757;
+      font-size:px(14);
+      padding:px(4) 0;
+      margin:px(8) 0;
+    }
+    &:before{
+      position: absolute;
+      left:px(10);
+      top:px(25);
     }
   }
 }

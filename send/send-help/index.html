@@ -128,12 +128,16 @@
         <input id="wx_pay" type="checkbox" checked>
         <label for="wx_pay"><i class="fa fa-check-circle-o"></i></label>
     </section>
-
+    <section id="msg"></section>
     <script src='../../common/js/jquery-1.10.1.min.js'></script>
     <script>
         $('#wx_pay').change(function () {
             $('#submit').toggleClass('ban');
         });
+        function showMsg(str) {
+            $('#msg').text(str).fadeToggle().delay(1000).fadeToggle();
+            return false;
+        }
         $('#submit').on('click', function () {
             if ($(this).hasClass('ban')) return false;
             if ($('#send_addr').val().length === 0) return showMsg('请选择寄件人地址！');

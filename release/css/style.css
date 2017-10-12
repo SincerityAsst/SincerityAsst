@@ -206,7 +206,7 @@ footer {
     height: 100%;
     border: 1px solid #d2cdcd;
     text-indent: 0.95rem;
-    box-sizing: border-box;
+    box-sizing: content-box;
     padding-right: 1.05rem; }
     .form-group input.nti {
       text-indent: 0.15rem; }
@@ -353,9 +353,20 @@ footer {
     background-color: #6288f3;
     color: #fff; }
 
+.g-pays {
+  margin-top: 0.5rem; }
+  .g-pays .tit {
+    color: #006bd2;
+    font-size: 0.35rem; }
+  .g-pays input[type="radio"]:checked + label {
+    background-color: #6288f3;
+    color: #fff; }
+
 .g-wechat-pay {
   border-top: 0.05rem solid #d0d0d0;
   padding: 0.5rem 0.625rem; }
+  .g-wechat-pay.g-wechat-pay2 {
+    padding: 0.5rem 1.125rem; }
   .g-wechat-pay input {
     display: none; }
   .g-wechat-pay label {
@@ -497,3 +508,24 @@ footer {
   .g-address .lab-default i {
     padding-right: 0.25rem;
     font-size: 0.4rem; }
+
+.g-eCard {
+  padding: 0.5rem 1.125rem; }
+  .g-eCard .ipts {
+    position: relative;
+    padding-left: 1.25rem;
+    color: #3090f4;
+    box-sizing: border-box;
+    width: 100%; }
+    .g-eCard .ipts input {
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 0.025rem solid #525757;
+      font-size: 0.35rem;
+      padding: 0.1rem 0;
+      margin: 0.2rem 0; }
+    .g-eCard .ipts:before {
+      position: absolute;
+      left: 0.25rem;
+      top: 0.625rem; }
