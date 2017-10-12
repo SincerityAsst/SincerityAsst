@@ -117,6 +117,17 @@
             if ($('#receive_addr').val().length === 0) return showMsg('请选择收件人地址！');
             if ($('#goods').val().length === 0) return showMsg('请选择寄托物品！');
         });
+
+        $('#send_addr').click(function(){
+            window.location.href='address.html?key=send_addr';
+        });
+        $('#receive_addr').click(function(){
+            window.location.href='address.html?key=receive_addr';
+        });
+        (function(){
+            $('#send_addr').val(localStorage['send_addr']);
+            $('#receive_addr').val(localStorage['receive_addr']);
+        })();
     </script>
 </body>
 

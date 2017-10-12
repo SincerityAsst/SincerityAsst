@@ -30,9 +30,11 @@ ul,
 li {
   list-style: none;
 }
-svg{
+
+svg {
   fill: currentColor;
 }
+
 button,
 input,
 select,
@@ -107,6 +109,60 @@ header {
   }
 }
 
+.g-drawer {
+  position: fixed;
+  //left:px(-264);
+  top: 0;
+  height: 100%;
+  width:px(264);
+  z-index: 1000;
+  background-color: #f1e7e8;
+  .user-content {
+    overflow: hidden;
+    height: px(180);
+    background-color: #030919;
+    img {
+      display: block;
+      border-radius: 50%;
+      margin: px(20) auto px(10);
+      width: px(60);
+      height: px(60);
+    }
+    p {
+      color: #fff;
+      font-size: px(12);
+      text-align: center;
+    }
+  }
+  .list {
+    padding:px(20) px(30);
+    &, a {
+      font-size: px(14);
+      color: #1c1818;
+    }
+    ul{
+      margin:px(20);
+    }
+    li{
+      margin-top:px(10);
+    }
+    .tit{
+      position: relative;
+      &:before{
+        content: '';
+        display: block;
+        width:px(6);
+        height:px(10);
+        border-radius:50%;
+        background-color: #6288f3;
+        position: absolute;
+        left:px(-10);
+        top:px(7);
+      }
+    }
+  }
+}
+
 .g-carousel {
   height: px(220);
   .dot-list {
@@ -164,6 +220,7 @@ footer {
     font-size: px(14);
   }
 }
+
 .form-group {
   position: relative;
   width: px(300);
@@ -176,7 +233,7 @@ footer {
     border: 1px solid #d2cdcd;
     text-indent: px(38);
     box-sizing: border-box;
-    padding-right:px(42);
+    padding-right: px(42);
     &.nti {
       text-indent: px(6);
     }
@@ -230,6 +287,7 @@ footer {
     border-color: #2872d8
   }
 }
+
 .g-intro {
   p {
     color: #373435;
@@ -305,16 +363,16 @@ footer {
   padding: px(12);
   color: #bfbfbf;
   font-size: px(14);
-  tr{
-    height:px(42);
+  tr {
+    height: px(42);
   }
-  td{
+  td {
     position: relative;
   }
   input {
     border: none;
-    width:100%;
-    padding-bottom:px(4);
+    width: 100%;
+    padding-bottom: px(4);
     text-indent: px(10);
     border-bottom: px(1) solid #bfbfbf;
     &::-webkit-input-placeholder {
@@ -324,114 +382,115 @@ footer {
       color: #bfbfbf;
     }
   }
-  .sprite{
+  .sprite {
     display: block;
-    width:px(1);
-    height:px(12);
+    width: px(1);
+    height: px(12);
     background-color: #717279;
     position: absolute;
-    right:0;
-    top:px(14);
+    right: 0;
+    top: px(14);
   }
-  .qu{
-    width:px(48);
-    height:px(36);
+  .qu {
+    width: px(48);
+    height: px(36);
     color: #6f5af0;
-    border-radius:px(6);
+    border-radius: px(6);
     background-color: #e7e9f2;
     text-align: center;
-    line-height:px(36);
-    font-size:px(24);
+    line-height: px(36);
+    font-size: px(24);
   }
-  .g-tips{
-    label{
-      width:px(77);
-      height:px(30);
+  .g-tips {
+    label {
+      width: px(77);
+      height: px(30);
     }
-    input[type="radio"]:checked + label{
+    input[type="radio"]:checked + label {
       background-color: #6288f3;
       color: #fff;
     }
   }
 }
-.g-wechat-pay{
-  border-top:px(2) solid #d0d0d0;
-  padding:px(20) px(25);
-  input{
+
+.g-wechat-pay {
+  border-top: px(2) solid #d0d0d0;
+  padding: px(20) px(25);
+  input {
     display: none;
   }
-  label{
+  label {
     color: #38b035;
-    font-size:px(20);
+    font-size: px(20);
     float: right;
   }
-  input[type="checkbox"]:checked + label{
+  input[type="checkbox"]:checked + label {
     color: #b5b5b5;
   }
-  .icon{
+  .icon {
     color: #4c4949;
-    font-size:px(14);
+    font-size: px(14);
     float: left;
-    i{
+    i {
       background-color: #38b035;
       color: #fff;
-      font-size:px(20);
-      padding:px(5);
-      border-radius:px(3);
-      margin-right:px(10);
+      font-size: px(20);
+      padding: px(5);
+      border-radius: px(3);
+      margin-right: px(10);
     }
   }
 }
 
-.g-search{
-  padding:px(45) px(30) px(100);
-  border-bottom:px(1) solid #e1e1e1;
-  margin-bottom:px(50);
-  &.g-search2{
-    padding-bottom:px(20);
-    margin-bottom:0;
+.g-search {
+  padding: px(45) px(30) px(100);
+  border-bottom: px(1) solid #e1e1e1;
+  margin-bottom: px(50);
+  &.g-search2 {
+    padding-bottom: px(20);
+    margin-bottom: 0;
   }
-  .tit{
+  .tit {
     position: relative;
     color: #4971f5;
-    font-size:px(14);
+    font-size: px(14);
     text-align: center;
-    &:before,&:after{
+    &:before, &:after {
       content: '';
       position: absolute;
-      left:0;
-      top:px(10);
-      width:36%;
-      height:px(1);
+      left: 0;
+      top: px(10);
+      width: 36%;
+      height: px(1);
       background-color: #d2cdcd;
     }
-    &:after{
+    &:after {
       right: 0;
       left: auto;
     }
   }
-  .input{
-    border:px(1) solid #d2cdcd;
+  .input {
+    border: px(1) solid #d2cdcd;
     color: #d2cdcd;
     position: relative;
-    height:px(40);
-    margin:px(20) auto px(30);
+    height: px(40);
+    margin: px(20) auto px(30);
     overflow: hidden;
-    svg{
-      width:px(24);
-      height:px(24);
+    svg {
+      width: px(24);
+      height: px(24);
       position: absolute;
-      margin:px(10);
-      right:0;
+      margin: px(10);
+      right: 0;
     }
     input {
       border: none;
-      width:100%;
+      width: 100%;
       position: absolute;
-      top:0;
-      height:px(40);
-      text-indent:px(10);
-      font-size:px(14);
+      top: 0;
+      height: px(40);
+      text-indent: px(10);
+      font-size: px(14);
       &::-webkit-input-placeholder {
         color: #d2cdcd;
       }
@@ -440,96 +499,98 @@ footer {
       }
     }
   }
-  .submit{
+  .submit {
     background-color: #3090f4;
-    height:px(43);
+    height: px(43);
     color: #fff;
-    font-size:px(20);
+    font-size: px(20);
     text-align: center;
-    line-height:px(43);
-    border:none;
-    width:100%;
+    line-height: px(43);
+    border: none;
+    width: 100%;
   }
 }
-.g-list{
-  .tit{
+
+.g-list {
+  .tit {
     color: #756e6e;
-    font-size:px(15);
-    line-height:px(40);
-    padding-left:px(26);
-    border-bottom:px(1) solid #e1e1e1;
+    font-size: px(15);
+    line-height: px(40);
+    padding-left: px(26);
+    border-bottom: px(1) solid #e1e1e1;
   }
-  li{
-    margin-left:px(46);
-    border-bottom:px(1) solid #e1e1e1;
+  li {
+    margin-left: px(46);
+    border-bottom: px(1) solid #e1e1e1;
     color: #9c9393;
-    font-size:px(12);
-    padding:px(12) 0;
-    svg{
+    font-size: px(12);
+    padding: px(12) 0;
+    svg {
       float: left;
-      width:px(26);
-      height:px(26);
+      width: px(26);
+      height: px(26);
     }
-    .detail{
+    .detail {
       overflow: hidden;
-      margin-left:px(40);
-      line-height:1.8;
+      margin-left: px(40);
+      line-height: 1.8;
     }
   }
-  .no-data{
+  .no-data {
     text-align: center;
-    padding-top:px(110);
+    padding-top: px(110);
     background: url(../images/no-res.png) no-repeat;
-    background-size:contain;
+    background-size: contain;
     width: px(124);
-    margin:px(30) auto 0;
-    font-size:px(15);
+    margin: px(30) auto 0;
+    font-size: px(15);
     color: #9c9393;
   }
 }
-.g-address{
-  padding:0 10%;
-  input{
-    width:100%;
-    border:none;
-    border-bottom:px(1) solid #bfbfbf;
-    font-size:px(15);
-    padding:px(10) px(6);
-    margin-top:px(10);
+
+.g-address {
+  padding: 0 10%;
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: px(1) solid #bfbfbf;
+    font-size: px(15);
+    padding: px(10) px(6);
+    margin-top: px(10);
     &::-webkit-input-placeholder {
       color: #bfbfbf;
     }
     &::placeholder {
       color: #bfbfbf;
     }
-    &[type='checkbox']{
+    &[type='checkbox'] {
       display: none;
-      &:checked + label{
-        i{
+      &:checked + label {
+        i {
           color: #38b035;
         }
       }
     }
   }
-  div{
+  div {
     position: relative;
   }
-  label{
+  label {
     color: #bfbfbf;
-    font-size:px(15);
+    font-size: px(15);
   }
-  .lab-address{
+  .lab-address {
     position: absolute;
-    right:0;
-    top:px(26);
-    i{
-      font-size:px(20);
+    right: 0;
+    top: px(26);
+    i {
+      font-size: px(20);
     }
   }
-  .lab-default{
-    i{
-      padding-right:px(10);
-      font-size:px(16);
+  .lab-default {
+    i {
+      padding-right: px(10);
+      font-size: px(16);
     }
   }
 }

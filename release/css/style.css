@@ -88,6 +88,49 @@ header {
     width: 0.75rem;
     font-size: 0.5rem !important; }
 
+.g-drawer {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 6.6rem;
+  z-index: 1000;
+  background-color: #f1e7e8; }
+  .g-drawer .user-content {
+    overflow: hidden;
+    height: 4.5rem;
+    background-color: #030919; }
+    .g-drawer .user-content img {
+      display: block;
+      border-radius: 50%;
+      margin: 0.5rem auto 0.25rem;
+      width: 1.5rem;
+      height: 1.5rem; }
+    .g-drawer .user-content p {
+      color: #fff;
+      font-size: 0.3rem;
+      text-align: center; }
+  .g-drawer .list {
+    padding: 0.5rem 0.75rem; }
+    .g-drawer .list, .g-drawer .list a {
+      font-size: 0.35rem;
+      color: #1c1818; }
+    .g-drawer .list ul {
+      margin: 0.5rem; }
+    .g-drawer .list li {
+      margin-top: 0.25rem; }
+    .g-drawer .list .tit {
+      position: relative; }
+      .g-drawer .list .tit:before {
+        content: '';
+        display: block;
+        width: 0.15rem;
+        height: 0.25rem;
+        border-radius: 50%;
+        background-color: #6288f3;
+        position: absolute;
+        left: -0.25rem;
+        top: 0.175rem; }
+
 .g-carousel {
   height: 5.5rem; }
   .g-carousel .dot-list span {
