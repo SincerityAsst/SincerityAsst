@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>快递服务</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../common/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../release/css/style.css">
+    <script>
+        (function (window, document) {
+            (function () {
+                var viewportEl = document.querySelector('meta[name="viewport"]'),
+                    hotcssEl = document.querySelector('meta[name="hotcss"]'),
+                    dpr = window.devicePixelRatio || 1;
+                if (hotcssEl) {
+                    var hotcssCon = hotcssEl.getAttribute("content");
+                    if (hotcssCon) {
+                        var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+                        if (initialDpr) {
+                            dpr = parseFloat(initialDpr[1])
+                        }
+                    }
+                }
+                var scale = 1,
+                    content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale +
+                        ", maximum-scale=" + scale + ", user-scalable=no";
+                if (viewportEl) {
+                    viewportEl.setAttribute("content", content)
+                } else {
+                    viewportEl = document.createElement("meta");
+                    viewportEl.setAttribute("name", "viewport");
+                    viewportEl.setAttribute("content", content);
+                    document.head.appendChild(viewportEl)
+                }
+            })();
+            var hotcss = {};
+            hotcss.px2rem = function (px, designWidth) {
+                if (!designWidth) {
+                    designWidth = parseInt(hotcss.designWidth, 10)
+                }
+                return parseInt(px, 10) * 187.5 / designWidth / 20
+            };
+            hotcss.mresize = function () {
+                var innerWidth = window.innerWidth;
+                if (!innerWidth) {
+                    return false
+                }
+                document.documentElement.style.fontSize = (innerWidth * 20 / 187.5) + "px"
+            };
+            hotcss.mresize();
+            window.addEventListener("resize", hotcss.mresize, false);
+            window.addEventListener("load", hotcss.mresize, false);
+            setTimeout(function () {
+                hotcss.mresize()
+            }, 300);
+            window.hotcss = hotcss
+        })(window, document);
+    </script>
+</head>
+
+<body>
+<header>
+    <span>我的地址簿</span>
+</header>
+<section class="g-address-list">
+    <div class="address-contain">
+        <div class="user-info clearfix">
+            <p class="name">hytee</p>
+            <p class="phone">15022222222</p>
+        </div>
+        <input type="text" class="address" value="厦门市思明区软件园二期" readonly>
+        <div class="opt clearfix">
+            <input id="default1" type="checkbox" checked>
+            <label class="lab-default" for="default1"><i class="fa fa-check-circle-o"></i>设为默认寄件地址</label>
+            <a href="#" class="del">删除</a>
+            <a href="#" class="edit">编辑</a>
+        </div>
+    </div>
+    <div class="address-contain">
+        <div class="user-info clearfix">
+            <p class="name">hytee</p>
+            <p class="phone">15022222222</p>
+        </div>
+        <input type="text" class="address" value="厦门市思明区软件园二期" readonly>
+        <div class="opt clearfix">
+            <input id="default2" type="checkbox">
+            <label class="lab-default" for="default2"><i class="fa fa-check-circle-o"></i>设为默认寄件地址</label>
+            <a href="#" class="del">删除</a>
+            <a href="#" class="edit">编辑</a>
+        </div>
+    </div>
+</section>
+<!--<section class="g-no-address">-->
+<!--您暂时还未添加地址-->
+<!--</section>-->
+<section class="form-group g-submit">
+    <input id="submit" type="submit" value="新增地址">
+</section>
+<script src='../common/js/jquery-1.10.1.min.js'></script>
+</body>
+
+</html>

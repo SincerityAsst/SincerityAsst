@@ -78,7 +78,6 @@ input,
 label {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
 img {
   border: none;
 }
@@ -650,6 +649,61 @@ footer {
       position: absolute;
       left:px(10);
       top:px(25);
+    }
+  }
+}
+
+.g-order{
+  height:100%;
+  li{
+    display: block;
+    width:100%;
+    height:100%;
+  }
+}
+
+.g-no-address{
+  font-size:px(15);
+  color: #525775;
+  text-align: center;
+  padding-top:px(100);
+}
+.g-address-list{
+  padding:px(10) px(40);
+  .address-contain{
+    margin-top:px(20);
+    p,label{
+      color: #525757;
+      font-size:px(14);
+      float: right;
+    }
+    .name,label{
+      float: left;
+    }
+    input{
+      display: block;
+      border:none;
+    }
+    .user-info{
+      margin-bottom:px(10);
+    }
+  }
+  .opt{
+    border-top:px(1) solid #bfbfbf;
+    border-bottom:px(1) solid #bfbfbf;
+    padding:px(5) 0;
+    margin-top:px(10);
+    input {
+      display: none;
+    }
+    input[type="checkbox"]:checked + label {
+      color: #b5b5b5;
+    }
+    a{
+      color: #6288f3;
+      font-size:px(15);
+      float: right;
+      margin-left:px(10);
     }
   }
 }
