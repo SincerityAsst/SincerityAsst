@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>诚毅小助</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../common/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../common/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="../release/css/style.css">
+    <script>
+        (function (window, document) {
+            (function () {
+                var viewportEl = document.querySelector('meta[name="viewport"]'),
+                    hotcssEl = document.querySelector('meta[name="hotcss"]'),
+                    dpr = window.devicePixelRatio || 1;
+                if (hotcssEl) {
+                    var hotcssCon = hotcssEl.getAttribute("content");
+                    if (hotcssCon) {
+                        var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+                        if (initialDpr) {
+                            dpr = parseFloat(initialDpr[1])
+                        }
+                    }
+                }
+                var scale = 1,
+                    content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale +
+                        ", maximum-scale=" + scale + ", user-scalable=no";
+                if (viewportEl) {
+                    viewportEl.setAttribute("content", content)
+                } else {
+                    viewportEl = document.createElement("meta");
+                    viewportEl.setAttribute("name", "viewport");
+                    viewportEl.setAttribute("content", content);
+                    document.head.appendChild(viewportEl)
+                }
+            })();
+            var hotcss = {};
+            hotcss.px2rem = function (px, designWidth) {
+                if (!designWidth) {
+                    designWidth = parseInt(hotcss.designWidth, 10)
+                }
+                return parseInt(px, 10) * 187.5 / designWidth / 20
+            };
+            hotcss.mresize = function () {
+                var innerWidth = window.innerWidth;
+                if (!innerWidth) {
+                    return false
+                }
+                document.documentElement.style.fontSize = (innerWidth * 20 / 187.5) + "px"
+            };
+            hotcss.mresize();
+            window.addEventListener("resize", hotcss.mresize, false);
+            window.addEventListener("load", hotcss.mresize, false);
+            setTimeout(function () {
+                hotcss.mresize()
+            }, 300);
+            window.hotcss = hotcss
+        })(window, document);
+    </script>
+</head>
+
+<body>
+<!--抽屉-->
+<section class="drawer-box">
+    <div id="drawer" class="g-drawer">
+        <div class="user-content">
+            <img src="http://temp.im/60x60" alt="">
+            <p class="username">微信用户名</p>
+        </div>
+        <div class="list">
+            <h3 class="tit">快递服务</h3>
+            <ul>
+                <li><a href="send.html">> 我要寄件</a></li>
+                <li><a href="send-help/index.html">> 请人代取</a></li>
+                <li><a href="search/index.html">> 查快递</a></li>
+            </ul>
+            <h3 class="tit">E通卡</h3>
+            <ul>
+                <li><a href="index.html">> 充值</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<header>
+    <a id="open_bar" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+    <span>个人中心</span>
+</header>
+
+<div class="user-content">
+    <img src="http://temp.im/60x60" alt="">
+    <p class="username">微信用户名</p>
+</div>
+<div class="g-userinfo">
+    <div class="form-group">
+        <label for="nick">昵称：</label>
+        <input id="nick" type="text" value="昵称" readonly>
+    </div>
+    <div class="form-group">
+        <label for="wechat">微信：</label>
+        <input id="wechat" type="text" value="微信" readonly>
+    </div>
+    <div class="form-group">
+        <label for="phone">手机号：</label>
+        <input id="phone" type="text" value="手机号" readonly>
+    </div>
+    <div class="form-group">
+        <label for="address">所在地</label>
+        <input id="address" type="text" value="所在地" readonly>
+    </div>
+    <div class="form-group g-submit">
+        <a href="#">编辑</a>
+    </div>
+</div>
+</body>
+</html>

@@ -115,20 +115,6 @@ header {
   background-color: #f1e7e8; }
   .g-drawer.active {
     left: 0rem; }
-  .g-drawer .user-content {
-    overflow: hidden;
-    height: 4.5rem;
-    background-color: #030919; }
-    .g-drawer .user-content img {
-      display: block;
-      border-radius: 50%;
-      margin: 0.5rem auto 0.25rem;
-      width: 1.5rem;
-      height: 1.5rem; }
-    .g-drawer .user-content p {
-      color: #fff;
-      font-size: 0.3rem;
-      text-align: center; }
   .g-drawer .list {
     padding: 0.5rem 0.75rem; }
     .g-drawer .list, .g-drawer .list a {
@@ -150,6 +136,21 @@ header {
         position: absolute;
         left: -0.25rem;
         top: 0.175rem; }
+
+.user-content {
+  overflow: hidden;
+  height: 4.5rem;
+  background-color: #030919; }
+  .user-content img {
+    display: block;
+    border-radius: 50%;
+    margin: 0.5rem auto 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem; }
+  .user-content p {
+    color: #fff;
+    font-size: 0.3rem;
+    text-align: center; }
 
 .g-carousel {
   height: 5.5rem; }
@@ -616,3 +617,18 @@ footer {
       float: right; }
     .order-item .address-content .address {
       clear: both; }
+
+.g-userinfo .form-group {
+  border-bottom: 0.025rem solid #ccc; }
+  .g-userinfo .form-group label {
+    font-size: 0.3rem;
+    top: 0.25rem;
+    color: #999;
+    z-index: 1000;
+    left: auto; }
+  .g-userinfo .form-group input {
+    text-indent: 0;
+    border: none;
+    margin-left: 1.25rem; }
+    .g-userinfo .form-group input[type='submit'] {
+      margin-left: 0; }

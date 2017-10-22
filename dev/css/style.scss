@@ -136,23 +136,7 @@ header {
   &.active {
     left: px(0);
   }
-  .user-content {
-    overflow: hidden;
-    height: px(180);
-    background-color: #030919;
-    img {
-      display: block;
-      border-radius: 50%;
-      margin: px(20) auto px(10);
-      width: px(60);
-      height: px(60);
-    }
-    p {
-      color: #fff;
-      font-size: px(12);
-      text-align: center;
-    }
-  }
+
   .list {
     padding: px(20) px(30);
     &, a {
@@ -181,7 +165,23 @@ header {
     }
   }
 }
-
+.user-content {
+  overflow: hidden;
+  height: px(180);
+  background-color: #030919;
+  img {
+    display: block;
+    border-radius: 50%;
+    margin: px(20) auto px(10);
+    width: px(60);
+    height: px(60);
+  }
+  p {
+    color: #fff;
+    font-size: px(12);
+    text-align: center;
+  }
+}
 .g-carousel {
   height: px(220);
   .dot-list {
@@ -765,4 +765,26 @@ footer {
       clear: both;
     }
   }
+}
+
+.g-userinfo{
+  .form-group{
+    border-bottom:px(1) solid #ccc;
+    label{
+      font-size:px(12);
+      top:px(10);
+      color: #999;
+      z-index:1000;
+      left: auto;
+    }
+    input{
+      text-indent:0;
+      border: none;
+      margin-left:px(50);
+      &[type='submit']{
+        margin-left: 0;
+      }
+    }
+  }
+
 }
