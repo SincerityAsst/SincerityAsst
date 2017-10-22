@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>诚毅小助</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../common/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../common/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="../release/css/style.css">
+    <script>
+        (function (window, document) {
+            (function () {
+                var viewportEl = document.querySelector('meta[name="viewport"]'),
+                    hotcssEl = document.querySelector('meta[name="hotcss"]'),
+                    dpr = window.devicePixelRatio || 1;
+                if (hotcssEl) {
+                    var hotcssCon = hotcssEl.getAttribute("content");
+                    if (hotcssCon) {
+                        var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+                        if (initialDpr) {
+                            dpr = parseFloat(initialDpr[1])
+                        }
+                    }
+                }
+                var scale = 1,
+                    content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale +
+                        ", maximum-scale=" + scale + ", user-scalable=no";
+                if (viewportEl) {
+                    viewportEl.setAttribute("content", content)
+                } else {
+                    viewportEl = document.createElement("meta");
+                    viewportEl.setAttribute("name", "viewport");
+                    viewportEl.setAttribute("content", content);
+                    document.head.appendChild(viewportEl)
+                }
+            })();
+            var hotcss = {};
+            hotcss.px2rem = function (px, designWidth) {
+                if (!designWidth) {
+                    designWidth = parseInt(hotcss.designWidth, 10)
+                }
+                return parseInt(px, 10) * 187.5 / designWidth / 20
+            };
+            hotcss.mresize = function () {
+                var innerWidth = window.innerWidth;
+                if (!innerWidth) {
+                    return false
+                }
+                document.documentElement.style.fontSize = (innerWidth * 20 / 187.5) + "px"
+            };
+            hotcss.mresize();
+            window.addEventListener("resize", hotcss.mresize, false);
+            window.addEventListener("load", hotcss.mresize, false);
+            setTimeout(function () {
+                hotcss.mresize()
+            }, 300);
+            window.hotcss = hotcss
+        })(window, document);
+    </script>
+</head>
+
+<body>
+<!--抽屉-->
+<section class="drawer-box">
+    <div id="drawer" class="g-drawer">
+        <div class="user-content">
+            <img src="http://temp.im/60x60" alt="">
+            <p class="username">微信用户名</p>
+        </div>
+        <div class="list">
+            <h3 class="tit">快递服务</h3>
+            <ul>
+                <li><a href="send.html">> 我要寄件</a></li>
+                <li><a href="send-help/index.html">> 请人代取</a></li>
+                <li><a href="search/index.html">> 查快递</a></li>
+            </ul>
+            <h3 class="tit">E通卡</h3>
+            <ul>
+                <li><a href="index.html">> 充值</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<header>
+    <a id="open_bar" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+    <span>我发布的</span>
+</header>
+
+<section class="g-order">
+    <section id="tabs_nav" class="tabs-nav">
+        <a href="javascript:void(0)" class="active">闲置二手</a>
+        <a href="javascript:void(0)">失物认领</a>
+    </section>
+    <section class="tabs-container swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="order-item goods-item">
+                    <img src="http://temp.im/140x111" alt="">
+                    <div class="intro">
+                        <h3>极光台灯</h3>
+                        <p>复古创意爱迪生灯泡|爱稀奇|独立设计师品牌weis</p>
+                        <div class="ext">
+                            <span class="price">￥50</span>
+                        </div>
+                    </div>
+                    <div class="opt clearfix">
+                        <a href="">编辑</a>
+                        <a href="">删除</a>
+                    </div>
+                </div>
+                <div class="order-item goods-item">
+                    <img src="http://temp.im/140x111" alt="">
+                    <div class="intro">
+                        <h3>极光台灯</h3>
+                        <p>复古创意爱迪生灯泡|爱稀奇|独立设计师品牌weis</p>
+                        <div class="ext">
+                            <span class="price">￥50</span>
+                        </div>
+                    </div>
+                    <div class="opt clearfix">
+                        <a href="">编辑</a>
+                        <a href="">删除</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-slide">
+                <div class="order-item lost-item mod-editor">
+                    <h3>寻物启事</h3>
+                    <p>7月4号在福建省厦门市丢了一个身份证顶顶顶了一个身份证顶顶顶证了一个身份证顶顶顶证</p>
+                    <div class="opt clearfix">
+                        <a href="">编辑</a>
+                        <a href="">删除</a>
+                    </div>
+                </div>
+                <div class="order-item lost-item mod-editor">
+                    <h3>失物招领</h3>
+                    <p>
+                        爱稀奇|独立设计师捡到杯子品牌weis
+                        <img src="http://temp.im/100x100" alt="">
+                    </p>
+                    <div class="opt clearfix">
+                        <a href="">编辑</a>
+                        <a href="">删除</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<script src='../common/js/jquery-1.10.1.min.js'></script>
+<script src='../common/js/swiper-3.4.2.jquery.min.js'></script>
+<script>
+    var tabsSwiper = new Swiper('.tabs-container', {
+        speed: 500,
+        onSlideChangeStart: function () {
+            $(".tabs-nav a.active").removeClass('active');
+            $(".tabs-nav a").eq(tabsSwiper.activeIndex).addClass('active')
+        }
+    });
+    $(".tabs-nav a").on('touchstart mousedown', function (e) {
+        e.preventDefault();
+        $(".tabs-nav a.active").removeClass('active');
+        $(this).addClass('active');
+        tabsSwiper.slideTo($(this).index())
+    });
+    $(".tabs a").click(function (e) {
+        e.preventDefault()
+    });
+
+    $('#open_bar').click(function () {
+        $('#drawer,.drawer-box').toggleClass('active');
+    });
+    $(".drawer-box").click(function (event) {
+        var target = $('#drawer');
+        if (!target.is(event.target) && target.has(event.target).length === 0 && target.hasClass("active")) {
+            $('#drawer,.drawer-box').removeClass('active');
+        }
+    });
+</script>
+</body>
+
+</html>

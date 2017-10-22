@@ -620,7 +620,7 @@ footer {
 
 .goods-item {
   border-bottom: 0.025rem solid #ccc;
-  padding-bottom: 0.5rem; }
+  padding-bottom: 0.25rem; }
   .goods-item img {
     width: 3.5rem;
     height: 2.775rem;
@@ -646,10 +646,19 @@ footer {
     .goods-item .intro .address {
       font-size: 0.35rem;
       font-weight: 700; }
+  .goods-item .opt {
+    border-top: 0.025rem solid #ccc;
+    padding-top: 0.25rem;
+    margin-top: 0.5rem; }
+    .goods-item .opt a {
+      float: right;
+      color: #006bd2;
+      font-size: 0.3rem;
+      margin-left: 0.25rem; }
 
 .lost-item {
   border-bottom: 0.025rem solid #ccc;
-  padding-bottom: 0.5rem; }
+  padding-bottom: 0.25rem; }
   .lost-item h3 {
     text-align: center;
     color: #006bd2;
@@ -660,6 +669,18 @@ footer {
   .lost-item img {
     max-width: 7.5rem;
     display: block; }
+  .lost-item.mod-editor h3 {
+    font-size: 0.35rem;
+    text-align: left; }
+  .lost-item .opt {
+    border-top: 0.025rem solid #ccc;
+    padding-top: 0.25rem;
+    margin-top: 0.5rem; }
+    .lost-item .opt a {
+      float: right;
+      color: #006bd2;
+      font-size: 0.3rem;
+      margin-left: 0.25rem; }
 
 .g-userinfo .form-group {
   border-bottom: 0.025rem solid #ccc; }

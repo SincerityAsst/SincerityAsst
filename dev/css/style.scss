@@ -768,7 +768,7 @@ footer {
 }
 .goods-item{
   border-bottom:px(1) solid #ccc;
-  padding-bottom:px(20);
+  padding-bottom:px(10);
   img{
     width:px(140);
     height:px(111);
@@ -800,10 +800,21 @@ footer {
       font-weight:700;
     }
   }
+  .opt{
+    border-top:px(1) solid #ccc;
+    padding-top:px(10);
+    margin-top:px(20);
+    a{
+      float: right;
+      color: #006bd2;
+      font-size:px(12);
+      margin-left:px(10);
+    }
+  }
 }
 .lost-item{
   border-bottom:px(1) solid #ccc;
-  padding-bottom:px(20);
+  padding-bottom:px(10);
   h3{
     text-align: center;
     color: #006bd2;
@@ -816,6 +827,23 @@ footer {
   img{
     max-width:px(300);
     display: block;
+  }
+  &.mod-editor{
+    h3{
+      font-size:px(14);
+      text-align: left;
+    }
+  }
+  .opt{
+    border-top:px(1) solid #ccc;
+    padding-top:px(10);
+    margin-top:px(20);
+    a{
+      float: right;
+      color: #006bd2;
+      font-size:px(12);
+      margin-left:px(10);
+    }
   }
 }
 .g-userinfo{
