@@ -251,7 +251,7 @@ footer {
     height: 100%;
     border: 1px solid #d2cdcd;
     text-indent: px(38);
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding-right: px(42);
     &.nti {
       text-indent: px(6);
@@ -341,6 +341,7 @@ footer {
     height: 100%;
     text-align: center;
     background: #6288f3;
+    box-sizing:content-box;
     text-indent: 0;
     color: #fff;
     font-size: px(20);
@@ -704,6 +705,64 @@ footer {
       font-size:px(15);
       float: right;
       margin-left:px(10);
+    }
+  }
+}
+.g-order{
+  .tabs-nav{
+    font-size:0;
+    a{
+      display: inline-block;
+      color: #0e1010;
+      font-size:px(12);
+      text-align: center;
+      width:33.3%;
+      border-bottom:px(1) solid #ebe5e5;
+      padding:px(10) 0;
+      &.active{
+        border-bottom-color: #3090f4;
+      }
+    }
+  }
+}
+.order-item{
+  font-size:px(12);
+  margin:px(20);
+  line-height:1.7;
+  .sp1{
+    color: #6288f3;
+  }
+  .order-info{
+    a{
+      float: right;
+      margin-top:px(-20);
+      color: #a1a3a6;
+    }
+  }
+  .address-content{
+    border: solid #ebe5e5;
+    border-width:px(1) 0;
+    margin:px(10) 0;
+    padding:px(10) 0;
+    &.tae{
+      text-align: end;
+      color: #6288f3;
+    }
+    .tit{
+      float: left;
+      margin-right:px(20);
+    }
+    .user-info{
+      overflow: hidden;
+    }
+    .user{
+      float: left;
+    }
+    .phone{
+      float: right;
+    }
+    .address{
+      clear: both;
     }
   }
 }
