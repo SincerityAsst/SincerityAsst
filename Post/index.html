@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>诚毅小助</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../common/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../common/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="../release/css/style.css">
+    <script>
+        (function (window, document) {
+            (function () {
+                var viewportEl = document.querySelector('meta[name="viewport"]'),
+                    hotcssEl = document.querySelector('meta[name="hotcss"]'),
+                    dpr = window.devicePixelRatio || 1;
+                if (hotcssEl) {
+                    var hotcssCon = hotcssEl.getAttribute("content");
+                    if (hotcssCon) {
+                        var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+                        if (initialDpr) {
+                            dpr = parseFloat(initialDpr[1])
+                        }
+                    }
+                }
+                var scale = 1,
+                    content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale +
+                        ", maximum-scale=" + scale + ", user-scalable=no";
+                if (viewportEl) {
+                    viewportEl.setAttribute("content", content)
+                } else {
+                    viewportEl = document.createElement("meta");
+                    viewportEl.setAttribute("name", "viewport");
+                    viewportEl.setAttribute("content", content);
+                    document.head.appendChild(viewportEl)
+                }
+            })();
+            var hotcss = {};
+            hotcss.px2rem = function (px, designWidth) {
+                if (!designWidth) {
+                    designWidth = parseInt(hotcss.designWidth, 10)
+                }
+                return parseInt(px, 10) * 187.5 / designWidth / 20
+            };
+            hotcss.mresize = function () {
+                var innerWidth = window.innerWidth;
+                if (!innerWidth) {
+                    return false
+                }
+                document.documentElement.style.fontSize = (innerWidth * 20 / 187.5) + "px"
+            };
+            hotcss.mresize();
+            window.addEventListener("resize", hotcss.mresize, false);
+            window.addEventListener("load", hotcss.mresize, false);
+            setTimeout(function () {
+                hotcss.mresize()
+            }, 300);
+            window.hotcss = hotcss
+        })(window, document);
+    </script>
+</head>
+
+<body>
+
+<header>
+    <a id="open_bar" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+    <span>闲置二手</span>
+</header>
+
+<!--抽屉-->
+<section class="drawer-box">
+    <div id="drawer" class="g-drawer">
+        <div class="user-content">
+            <img src="http://temp.im/60x60" alt="">
+            <p class="username">微信用户名</p>
+        </div>
+        <div class="list">
+            <h3 class="tit">快递服务</h3>
+            <ul>
+                <li><a href="send.html">> 我要寄件</a></li>
+                <li><a href="send-help/index.html">> 请人代取</a></li>
+                <li><a href="search/index.html">> 查快递</a></li>
+            </ul>
+            <h3 class="tit">E通卡</h3>
+            <ul>
+                <li><a href="index.html">> 充值</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<form action="" class="g-goods-post">
+    <div class="form-group">
+        <input type="text" placeholder="请输入标题名" required>
+    </div>
+    <div class="form-group textarea-contain">
+        <textarea name="" id="" placeholder="描述一下你的闲置"></textarea>
+    </div>
+    <div class="form-group">
+        <label class="lb-goods" for="goods"><i class="fa fa-camera"></i></label><input id="goods" type="file">
+    </div>
+    <div class="form-group card-contain">
+        <p class="intro">您可以上传学生证、身份证等来证明您的身份，以保证在进行二手交易时的市场安全！</p>
+        <label class="lb-card" for="card"><span>+</span></label><input id="card" type="file">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="请输入联系电话" required>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="请输入微信号" required>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="请输入取货方式，默认自取">
+    </div>
+    <div class="form-group g-submit">
+        <input id="submit" type="submit" value="保存">
+    </div>
+</form>
+</body>
+</html>
+<script src='../common/js/jquery-1.10.1.min.js'></script>
+<script src='../common/js/swiper-3.4.2.jquery.min.js'></script>
+<script>
+    var tabsSwiper = new Swiper('.tabs-container', {
+        speed: 500,
+        onSlideChangeStart: function () {
+            $(".tabs-nav a.active").removeClass('active');
+            $(".tabs-nav a").eq(tabsSwiper.activeIndex).addClass('active')
+        }
+    });
+    $(".tabs-nav a").on('touchstart mousedown', function (e) {
+        e.preventDefault();
+        $(".tabs-nav a.active").removeClass('active');
+        $(this).addClass('active');
+        tabsSwiper.slideTo($(this).index())
+    });
+    $(".tabs a").click(function (e) {
+        e.preventDefault()
+    });
+
+    $('#open_bar').click(function () {
+        $('#drawer,.drawer-box').toggleClass('active');
+    });
+    $(".drawer-box").click(function (event) {
+        var target = $('#drawer');
+        if (!target.is(event.target) && target.has(event.target).length === 0 && target.hasClass("active")) {
+            $('#drawer,.drawer-box').removeClass('active');
+        }
+    });
+    $('input[type=file]').change(function(e){
+        var _this = $(this);
+        for (var i = 0; i < e.target.files.length; i++) {
+            var file = e.target.files.item(i);
+            if (!(/^image\/.*$/i.test(file.type))) {
+                continue; //不是图片 就跳出这一次循环
+            }
+            //实例化FileReader API
+            var freader = new FileReader();
+            freader.readAsDataURL(file);
+            freader.onload = function(e) {
+                if(_this.attr('id')==='card'){
+                    _this.prev().remove();
+                    _this.replaceWith($('<img src="'+e.target.result+'"/>'));
+                }else{
+                    _this.parent('.form-group').prepend($('<img src="'+e.target.result+'"/>'));
+                }
+            }
+        }
+    })
+
+</script>
+</body>
+
+</html>

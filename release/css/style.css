@@ -696,3 +696,59 @@ footer {
     margin-left: 1.25rem; }
     .g-userinfo .form-group input[type='submit'] {
       margin-left: 0; }
+
+.g-goods-post {
+  padding-bottom: 2.5rem; }
+  .g-goods-post .form-group {
+    margin: 0.25rem auto; }
+    .g-goods-post .form-group img {
+      width: 1.5rem;
+      height: 1.25rem;
+      margin: -0.5rem 0.25rem 0 0; }
+    .g-goods-post .form-group input {
+      border-width: 0 0 0.025rem 0;
+      text-indent: 0; }
+      .g-goods-post .form-group input[type='file'] {
+        display: none; }
+    .g-goods-post .form-group textarea {
+      width: 100%;
+      height: 100%; }
+    .g-goods-post .form-group .intro {
+      color: #006bd2;
+      font-size: 0.35rem;
+      border-top: 0.025rem solid #ccc;
+      padding-top: 0.25rem; }
+    .g-goods-post .form-group .lb-goods {
+      top: -0.5rem;
+      left: auto;
+      right: 0;
+      height: 1.35rem;
+      width: 1.45rem;
+      border: 0.025rem dashed #ccc; }
+      .g-goods-post .form-group .lb-goods i {
+        border: none;
+        font-size: 0.9rem; }
+    .g-goods-post .form-group .lb-card {
+      text-align: center;
+      width: 3.25rem;
+      height: 2rem;
+      background-color: #cccccc;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%); }
+      .g-goods-post .form-group .lb-card span {
+        font-size: 1.25rem;
+        color: #000; }
+  .g-goods-post .g-submit {
+    margin-bottom: 0; }
+  .g-goods-post .textarea-contain {
+    height: 3.5rem; }
+  .g-goods-post .card-contain {
+    height: 3.25rem; }
+    .g-goods-post .card-contain img {
+      width: 3.25rem;
+      height: 2rem;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute; }
