@@ -952,3 +952,16 @@ footer {
     }
   }
 }
+.g-lost-post{
+  .form-group{
+    label{
+      font-size:px(12);
+    }
+    select{
+      position: absolute;
+      left:px(100);
+      top:px(2);
+      width:px(100);
+    }
+  }
+}
